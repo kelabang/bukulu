@@ -14,4 +14,6 @@
 
 <script src=<?php echo base_url()."assets/lib/axios/axios.min.js";?> ></script>
 
+<link href=<?php echo base_url()."assets/main.css";?> rel="stylesheet">
+
 <title>Header</title>

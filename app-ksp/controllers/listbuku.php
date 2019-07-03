@@ -57,5 +57,30 @@ class ListBuku extends Main_Controller {
         endif;
         return $this->response($output);
     }
+
+    // Mengubah buku dengan data json
+    function updateBook ($id) {
+        $params = $this->request();
+        $body = $params['body'];
+        $result = $this->buku->update($id, $body);
+        $output = array(
+            'message' => 'failed to update'
+        );
+        if($result):
+            $output['message'] = 'success to update';
+        endif;
+        return $this->response($output);
+    }
+
+    function deleteBook ($id) {
+        $result = $this->buku->delete($id);
+        $output = array(
+            'message' => 'failed to delete'
+        );
+        if($result):
+            $output['message'] = 'success to delete';
+        endif;
+        return $this->response($output);
+    }
     
 }

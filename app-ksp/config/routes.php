@@ -52,8 +52,8 @@ $route['listbuku/refresh/book'] = "listbuku/refreshBook";
 */
 $route['listbuku/add'] = "listbuku/addBook";
 
-$route['listbuku/update'] = "listbuku/updateBook";
-$route['listbuku/delete'] = "listbuku/deleteBook";
+$route['listbuku/update/(:any)'] = "listbuku/updateBook/$1";
+$route['listbuku/delete/(:any)'] = "listbuku/deleteBook/$1";
 
 // $route['main/listbuku/create'] = "listbuku/create";
 

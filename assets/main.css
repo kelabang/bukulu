@@ -1,0 +1,7 @@
+
+.card:hover a {
+    text-decoration: none;
+}
+.card:hover div.tools {
+    display:block!important;
+} 

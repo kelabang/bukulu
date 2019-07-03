@@ -23,6 +23,16 @@ class Buku extends Main_Model {
         return $this->_queryInsertBook($data);
     }
 
+    // delete book
+    function delete ($id) {
+        return $this->_queryDeleteBook($id);
+    }
+
+    // update book
+    function update ($id, $data) {
+        return $this->_queryUpdateBook($id, $data);
+    }
+
     // get collection of books
     function getList ($options = null) {
         return $this->_queryGetList();
@@ -47,6 +57,19 @@ class Buku extends Main_Model {
     private function _queryInsertBook ($data = null) {
         $data = $this->_createObjectBook($data);
         $this->db->insert($this->table, $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    private function _queryUpdateBook ($id = null, $data = null) {
+        $data = $this->_createObjectBook($data);
+        $this->db
+            ->where('ID', $id)
+            ->update($this->table, $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }   
+
+    private function _queryDeleteBook ($id = null) {
+        $this->db->delete($this->table, array('ID' => $id));
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
