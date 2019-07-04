@@ -20,6 +20,8 @@ var TambahModal = {
                             var html = response.data;
                             var listBooks = document.getElementById('list-buku');
                             listBooks.innerHTML = html;
+                            BindButtonDelete(); // bind button  
+                            BindButtonEdit(); // bind button 
                         });
                 }
             }
@@ -41,6 +43,19 @@ btnBookFormInput.onclick = function (e) {
     e.preventDefault();
     var bookFormInput = document.getElementById('book-form-input');
     bookFormInput.style.display = '';
+    var header = bookFormInput.querySelectorAll('h2')[0];
+    header.innerHTML = 'Tambah Bukunya';
+    autofillForm(bookFormInput, {
+        id: '',
+        judul: '',
+        pengarang: '',
+        isbn: '',
+        jumlah_halaman: '',
+        tanggal_terbit: '',
+        harga: '',
+        edisi: '',
+        image: '',
+    });
     ObjectTambahModal.setContent(bookFormInput)
     flatpickr("#datepicker");
     ObjectTambahModal.open();
@@ -100,6 +115,8 @@ function autofillForm(formInput, dataset) {
         var name = inputText[i].name;
         if (dataset[name]) {
             inputText[i].value = dataset[name];
+        } else {
+            inputText[i].value = '';
         }
     }
 }
