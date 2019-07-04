@@ -82,5 +82,9 @@ class ListBuku extends Main_Controller {
         endif;
         return $this->response($output);
     }
+
+    function syncBook () {
+
+    }
     
 }

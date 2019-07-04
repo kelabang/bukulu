@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2019 at 09:22 PM
+-- Generation Time: Jul 02, 2019 at 04:46 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.1.30
 
@@ -31,35 +31,28 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb_buku` (
   `ID` int(5) NOT NULL,
   `Judul_Buku` varchar(50) NOT NULL,
+  `Kategori` varchar(20) DEFAULT NULL,
   `Pengarang` varchar(50) NOT NULL,
   `ISBN` varchar(15) NOT NULL,
   `Jumlah_Halaman` int(4) NOT NULL,
   `Tanggal_Terbit` date NOT NULL,
   `Harga` int(7) NOT NULL,
-  `Edisi` int(2) NOT NULL,
-  `image` text DEFAULT NULL
+  `Edisi` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_buku`
 --
 
-INSERT INTO `tb_buku` (`ID`, `Judul_Buku`, `Pengarang`, `ISBN`, `Jumlah_Halaman`, `Tanggal_Terbit`, `Harga`, `Edisi`, `image`) VALUES
-(18, 'Lanjut', 'Tere Liye', '123142', 1231, '2019-07-06', 2000000, 1, NULL),
-(20, 'hehe hoho', 'hehe1', '3214213', 1234, '2019-07-16', 200000, 2, NULL),
-(22, 'Makan', 'Imam', '12313214', 1231, '2019-07-03', 12000, 1, NULL),
-(23, '1000 pasukan', 'imam', '12312', 1324, '2019-07-19', 300000, 2, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_buku_kategori`
---
-
-CREATE TABLE `tb_buku_kategori` (
-  `buku_id` int(11) NOT NULL,
-  `kategori_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `tb_buku` (`ID`, `Judul_Buku`, `Kategori`, `Pengarang`, `ISBN`, `Jumlah_Halaman`, `Tanggal_Terbit`, `Harga`, `Edisi`) VALUES
+(1, 'Tentang Kamu', 'Novel, Fiction', 'Tere Liye', '139786020822341', 524, '2016-10-27', 25000, 1),
+(9, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(10, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(11, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(12, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(13, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(14, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1),
+(15, 'coba satu', NULL, 'Tere liye', '123123123132', 123, '2019-02-02', 25000, 1);
 
 -- --------------------------------------------------------
 
@@ -132,13 +125,6 @@ ALTER TABLE `tb_buku`
   ADD KEY `ID` (`ID`);
 
 --
--- Indexes for table `tb_buku_kategori`
---
-ALTER TABLE `tb_buku_kategori`
-  ADD PRIMARY KEY (`buku_id`,`kategori_id`),
-  ADD UNIQUE KEY `index_buku_kategori` (`buku_id`,`kategori_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -146,7 +132,7 @@ ALTER TABLE `tb_buku_kategori`
 -- AUTO_INCREMENT for table `tb_buku`
 --
 ALTER TABLE `tb_buku`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
