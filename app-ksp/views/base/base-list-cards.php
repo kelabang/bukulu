@@ -12,6 +12,7 @@
                 <div
                     class="tools"
                     style="
+                        width:100px;
                         display:none;
                         position: absolute;
                         top: 0;
@@ -34,8 +35,8 @@
                         
                         class="upload-image-buku" href="#">
                         <img 
-                            src=<?php echo base_url()."assets/icons/icons8-synchronize-50.svg"; ?> 
-                            style="width:15%;padding-right: 5px;opacity:.5;"
+                            src=<?php echo base_url()."assets/icons/icons8-synchronize.svg"; ?> 
+                            style="width:30%;padding-right: 5px;"
                         />
                     </a>
                     <a 
@@ -52,8 +53,8 @@
 
                         class="edit" href="#">
                         <img 
-                            src=<?php echo base_url()."assets/icons/icons8-edit-50.svg"; ?> 
-                            style="width:18%;padding-right: 5px;opacity:.5;"
+                            src=<?php echo base_url()."assets/icons/icons8-edit.svg"; ?> 
+                            style="width:30%;padding-right: 5px;"
                         />
                     </a>
                     <a 
@@ -69,8 +70,8 @@
                         
                         class="delete" href="#">
                         <img 
-                            src=<?php echo base_url()."assets/icons/icons8-trash-50.svg"; ?> 
-                            style="width:18%;padding-right: 5px;opacity:.5;"
+                            src=<?php echo base_url()."assets/icons/icons8-trash-can.svg"; ?> 
+                            style="width:30%;padding-right: 5px;"
                         />
                     </a>
                 </div>
