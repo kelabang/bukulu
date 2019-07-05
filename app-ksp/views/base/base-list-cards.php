@@ -2,6 +2,11 @@
     <div class="container max-w-xl m-auto flex flex-wrap items-center justify-start">
         <?php 
             foreach ($bukubuku as $key => $value):
+                $default_image = base_url()."assets/default-image.jpg";
+                $image = $value->image;
+                if(empty($image)) {
+                    $image = $default_image;
+                }
         ?>
             <div class="card w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3" style="position:relative">
                 <div
@@ -25,8 +30,8 @@
                         data-tanggal_terbit='<?php echo $value->Tanggal_Terbit; ?>' 
                         data-harga='<?php echo $value->Harga; ?>' 
                         data-edisi='<?php echo $value->Edisi; ?>' 
-                        data-image='<?php //echo $value->Image; ?>'
-
+                        data-image='<?php echo $image; ?>'
+                        
                         class="upload-image-buku" href="#">
                         <img 
                             src=<?php echo base_url()."assets/icons/icons8-synchronize-50.svg"; ?> 
@@ -43,7 +48,7 @@
                         data-tanggal_terbit='<?php echo $value->Tanggal_Terbit; ?>' 
                         data-harga='<?php echo $value->Harga; ?>' 
                         data-edisi='<?php echo $value->Edisi; ?>' 
-                        data-image='<?php //echo $value->Image; ?>'
+                        data-image='<?php echo $image; ?>'
 
                         class="edit" href="#">
                         <img 
@@ -60,7 +65,7 @@
                         data-tanggal_terbit='<?php echo $value->Tanggal_Terbit; ?>' 
                         data-harga='<?php echo $value->Harga; ?>' 
                         data-edisi='<?php echo $value->Edisi; ?>' 
-                        data-image='<?php //echo $value->Image; ?>'
+                        data-image='<?php echo $image; ?>'
                         
                         class="delete" href="#">
                         <img 
@@ -71,7 +76,7 @@
                 </div>
                 <div
                     class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition">
-                    <img class="w-full" src="<?php echo base_url()."assets/default-image.jpg"; ?> "
+                    <img class="w-full" src="<?php echo $image; ?> "
                         alt="Sunset in the mountains">
                     <div class="p-6 flex flex-col justify-between ">
                         <h3 class="font-medium text-grey-darkest mb-4 leading-normal">

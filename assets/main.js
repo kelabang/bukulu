@@ -155,6 +155,7 @@ var pilihDeleteBuku = {
     id: 0
 };
 var DeleteModal = {
+    cssClass: ['bypass'],
     content: 'Yakin mau delete buku ' + pilihDeleteBuku.judul + ' ?',
     footer: [
         {

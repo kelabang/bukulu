@@ -14,7 +14,8 @@ class Buku extends Main_Model {
             'jumlah_halaman' => 'Jumlah_Halaman',
             'tanggal_terbit' => 'Tanggal_Terbit',
             'harga' => 'Harga',
-            'edisi' => 'Edisi'
+            'edisi' => 'Edisi',
+            'image' => 'image',
         );
     }
 

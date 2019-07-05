@@ -2,6 +2,7 @@ function generateModal(opt) {
 
     var content = opt.content;
     var footer = opt.footer;
+    var cssClass = opt.cssClass || [];
 
     var default_footer = [
         {
@@ -30,7 +31,7 @@ function generateModal(opt) {
         stickyFooter: false,
         closeMethods: ['overlay', 'button', 'escape'],
         closeLabel: "Close",
-        cssClass: ['custom-class-1', 'custom-class-2'],
+        cssClass: cssClass,
         onOpen: function () {
             console.log('modal open');
         },

@@ -1,0 +1,12 @@
+.tingle-modal-box__content {
+    padding: 0px;
+}
+
+.tingle-modal.bypass .tingle-modal-box__content {
+    padding: 3rem;
+}
+
+
+form#book-form-input {
+    margin: 0px auto;
+}
